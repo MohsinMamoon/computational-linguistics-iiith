@@ -49,6 +49,10 @@ function fy(a, b, c, d) {
         a[c] = a[b],
         a[b] = d
 }
+/* *Function to convert to normal Case */
+function n_case(string) {
+    return string.replace(string[0], string[0].toUpperCase());
+}
 
 /* *Functions to activate and disable buttons */
 function activate(elem) {
@@ -75,7 +79,7 @@ function disable(elem) {
 function update_sentence() {
     var sent = stack.join(' ').toLowerCase();
     if (sent.length > 0)
-        $('#sentence').text(sent.replace(sent[0], sent[0].toUpperCase()));
+        $('#sentence').text(n_case(sent));
     else
         $('#sentence').text(sent);
 }
@@ -125,16 +129,47 @@ function reset_all() {
 
 function reset() {
     while (stack.length) undo();
+    activate($('#check'));
+    $('#sent_form').trigger('reset');
+    $('#all_sents').remove();  
+     $('#sentence_div')[0].style.backgroundColor = "#EEEEEE";
+    activate($('#show_all'));
 }
 
 /* *Function to check Sentence */
 function check_sent() {
-    var_count--;
-    reset();
-    update_count();
-    if (var_count == 0) {
-        alert('Congratulations! You have completed the experiment!');
-        if (confirm("Another try?")) location.reload();
-        // else show_all_sent();
+    if ($('#check').hasClass('active')) {
+        if ($('#sentence_type').val() == "") {
+            $('[data-toggle="popover"]').popover('show');
+        } else {
+            $('#sentence_div')[0].style.backgroundColor = "green";
+            var_count--;
+            setTimeout(reset, 800);
+            setTimeout(update_count, 800);
+            setTimeout(function () {
+                if (var_count == 0) {
+                    $('#confirm').modal();
+                }
+            }, 500);
+        }
     }
+}
+
+function close_popover() {
+    $('[data-toggle="popover"]').popover('hide');
+}
+
+/* *Function to Show all answers */
+function show_all_sent() {
+    $('#all_sents').remove();  
+    disable($('#check'));
+    var list = $('<ul class="list-group well well-lg" id="all_sents"></ul>');
+    var i = 1;
+    $.each(Sentences.Variations, function(key  , value) {
+        var item = $('<li class="list-group-item list-group-item-success"></li>').text(String(i)+'. '+n_case(key)+' (' + n_case(value) + ')');
+        list.append(item);
+        i = i + 1;
+    });
+    $('#sub_content').append(list[0]);
+    disable($('#show_all'));
 }

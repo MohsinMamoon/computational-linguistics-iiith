@@ -41,7 +41,7 @@
 	</script>
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index" onload="reset()">
 	<div id="top">
 		<header>
 			<!-- Navigation -->
@@ -153,8 +153,37 @@
 								<div id="Hindi" class="col-md-3"><span onclick="lang_sel('Hindi')">हिन्दी</span></div>
 							</div>
 							<div class="row experiment_content">
-								<div class="container">
-									<div class="container" id="var_count"><dl><dt></dt><dd><mark></mark></dd></dl></div>
+								<div class="container" id="sub_content">
+									<!-- Modal -->
+									<div class="modal fade" id="confirm" role="dialog">
+										<div class="modal-dialog">
+
+											<!-- Modal content-->
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close"
+														data-dismiss="modal">&times;</button>
+													<h4 class="modal-title">Congratulations! You have completed the
+														experiment!</h4>
+												</div>
+												<div class="modal-body">
+													<p>Another Try?</p>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default"
+														data-dismiss="modal" onclick="show_all_sent()">No</button>
+													<button type="button" class="btn btn-default" data-dismiss="modal"
+														onclick="location.reload()">Yes</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="container" id="var_count">
+										<dl>
+											<dt></dt>
+											<dd><mark></mark></dd>
+										</dl>
+									</div>
 									<div class="jumbotron" id="button_div">
 										<center id="word_buttons">
 											<br /><br /><br /><br />
@@ -162,23 +191,29 @@
 												of sentence you formed.</p>
 										</center>
 									</div>
-									<form class="form-inline">
+									<form class="form-inline" id="sent_form" name="sent_form">
 										<div class="jumbotron" id="sentence_div">
 											<h1 class="form-group" id="sentence"></h1>
-											<select class="form-group form-control" id="sentence_type">
-												<option value="Assertive">Declarative</option>
-												<option value="Interrogative">Interrogative</option>
-												<option value="Exclamative">Exclamative</option>
-												<option value="Imperative">Imperative</option>
-											</select>
+
+											<a href="#" title="Required Feild" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Please Select the type before proceeding!">.</a>
+												<select class="form-group form-control" id="sentence_type" onchange="close_popover()">
+													<option value="" selected>--Select Type--</option>
+													<option value="Assertive">Declarative</option>
+													<option value="Interrogative">Interrogative</option>
+													<option value="Exclamative">Exclamative</option>
+													<option value="Imperative">Imperative</option>
+												</select>
 										</div>
 										<div id="submit_buttons_div">
 											<button type="reset" class="btn btn-warning btn-lg disabled"
 												onclick="undo(this)" id="undo_btn">Undo</button>
-											<button type="button" class="btn btn-info btn-lg" onclick="check_sent()">Check</button>
-											<button type="button" class="btn btn-success btn-lg">Show Answer</button>
-											<button type="reset" class="btn btn-danger btn-lg" onclick="reset_all()">Reset</button></div>
+											<button type="button" class="btn btn-info btn-lg active" onclick="check_sent()"
+												id="check" >Check</button>
+											<button type="button" class="btn btn-success btn-lg" onclick="show_all_sent()" id="show_all">Show Answer</button>
+											<button type="reset" class="btn btn-danger btn-lg"
+												onclick="reset_all()">Reset</button></div>
 									</form>
+									<br />
 								</div>
 							</div>
 						</div>
