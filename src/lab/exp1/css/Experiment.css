@@ -2,9 +2,11 @@
 .language_selector {
     display: grid;
 }
+
 .experiment_content {
     display: none;
 }
+
 #English {
     display: grid;
     align-content: center;
@@ -34,17 +36,34 @@
     left: 51%;
     top: 150%;
 }
-#English:hover, #Hindi:hover {
+
+#English:hover,
+#Hindi:hover {
     background-color: #ff7e5f;
     color: white;
 }
 
-#English>span:hover, #Hindi>span:hover {
+#English>span:hover,
+#Hindi>span:hover {
     border-bottom: 1px solid rgb(223, 230, 183);
-    cursor:pointer;
+    cursor: pointer;
 }
 
 /* *Button Area Style */
+#var_count {
+    display: flex;
+    justify-content: flex-end;
+}
+
+dt {
+    color: green;
+    font-size: 5em;
+}
+
+dd {
+    font-size: 1.5em;
+}
+
 .btn {
     margin-top: 3px;
     margin-bottom: 3px;
@@ -59,14 +78,15 @@
 #proc_words {
     opacity: 0.3;
 }
+
 #proc_words:hover {
     opacity: 1;
 }
 
 /* *Sentence Area Style */
 #sentence {
-    text-align:center;
-    width:85%;
+    text-align: center;
+    width: 85%;
 }
 
 /* *Submit Buttons Area Style */

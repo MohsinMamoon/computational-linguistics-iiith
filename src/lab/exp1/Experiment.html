@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
@@ -154,29 +154,30 @@
 							</div>
 							<div class="row experiment_content">
 								<div class="container">
+									<div class="container" id="var_count"><dl><dt></dt><dd><mark></mark></dd></dl></div>
 									<div class="jumbotron" id="button_div">
 										<center id="word_buttons">
-										
 											<br /><br /><br /><br />
 											<p id="proc_words">Use the buttons to form your sentence and select the type
 												of sentence you formed.</p>
 										</center>
 									</div>
-									<form class="form-inline">/
+									<form class="form-inline">
 										<div class="jumbotron" id="sentence_div">
-											<h1 class="form-group" id="sentence">Hi there Buddy</h1>
+											<h1 class="form-group" id="sentence"></h1>
 											<select class="form-group form-control" id="sentence_type">
-												<option value="Imperative">Imperative</option>
+												<option value="Assertive">Declarative</option>
 												<option value="Interrogative">Interrogative</option>
 												<option value="Exclamative">Exclamative</option>
-												<option value="Assertive">Assertive</option>
+												<option value="Imperative">Imperative</option>
 											</select>
 										</div>
 										<div id="submit_buttons_div">
-											<button type="reset" class="btn btn-warning btn-lg">Undo</button>
-											<button type="submit" class="btn btn-info btn-lg">Check</button>
+											<button type="reset" class="btn btn-warning btn-lg disabled"
+												onclick="undo(this)" id="undo_btn">Undo</button>
+											<button type="button" class="btn btn-info btn-lg" onclick="check_sent()">Check</button>
 											<button type="button" class="btn btn-success btn-lg">Show Answer</button>
-											<button type="reset" class="btn btn-danger btn-lg">Reset</button></div>
+											<button type="reset" class="btn btn-danger btn-lg" onclick="reset_all()">Reset</button></div>
 									</form>
 								</div>
 							</div>
