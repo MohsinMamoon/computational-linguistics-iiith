@@ -24,6 +24,8 @@
 
 	<!-- Custom CSS -->
 	<link href="../../../css/style.css" rel="stylesheet">
+	<link href="./css/Quiz.css" rel="stylesheet">
+	<script type="text/javascript" src='./js/Quizzes.js'></script>
 	<script type="text/javascript" src='tabs.js'></script>
 	<script>
 		(function (i, s, o, g, r, a, m) {
@@ -147,26 +149,16 @@
 						<!--edit -->
 						<h1 class="text-h2-lightblue">Forming Sentences - 1</h1>
 						<div class="content" id="experiment-article-section-5-content">
-							<strong>Q1.</strong> Which of these sentences are grammatically and logically correct?
-							<br /><br /><span><b>a)</b></span>
-							<ol>
-								<li><input type="checkbox" value="1" name="a"><span id="1a"> Ram eat an apple.</span>
-								</li>
-								<li><input type="checkbox" value="2" name="a"><span id="2a"> Ram eats an apple.</span>
-								</li>
-								<li><input type="checkbox" value="3" name="a"><span id="3a"> Apple eats Ram.</span></li>
-								<li><input type="checkbox" value="4" name="a"><span id="4a"> Eat an apple</span></li>
-								<li><input type="checkbox" value="5" name="a"><span id="5a"> Eat Ram</span></li>
-							</ol>
-							<br /><span><b>b)</b></span>
-							<ol>
-								<li><input type="checkbox" value="1" name="b"><span> मैं घर के दूर हूँ</span></li>
-								<li><input type="checkbox" value="2" name="b"><span> बिल्ली खाती है चूहा</span></li>
-								<li><input type="checkbox" value="3" name="b"><span> बिल्ली खाता है चूहा</span></li>
-								<li><input type="checkbox" value="4" name="b"><span> बिल्ली चूहा को खाती है</span></li>
-								<li><input type="checkbox" value="5" name="b"><span> बिल्ली चूहे को खाती है</span></li>
-							</ol>
-							<br /><br /> <input type="button" value="Submit" id="QuizSubmit">
+							<div class="row language_selector">
+								<div id="English" class="col-md-3"><span onclick="lang_sel('English')">English</span>
+								</div>
+								<div id="Hindi" class="col-md-3"><span onclick="lang_sel('Hindi')">हिन्दी</span></div>
+							</div>
+							<div class="row experiment_content">
+
+							<!-- Add code here -->
+
+							</div>
 						</div>
 					</div>
 				</div>

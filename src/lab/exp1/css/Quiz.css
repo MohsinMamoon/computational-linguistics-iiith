@@ -1,0 +1,50 @@
+/* *Language Selector Style */
+.language_selector {
+    display: grid;
+}
+
+.experiment_content {
+    display: none;
+}
+
+#English {
+    display: grid;
+    align-content: center;
+    text-align: center;
+    background-color: #FF6600;
+    color: black;
+    width: 25%;
+    height: 300%;
+    font-size: 5em;
+    border-radius: 20px;
+    position: absolute;
+    top: 150%;
+    left: 24%;
+}
+
+#Hindi {
+    display: grid;
+    align-content: center;
+    text-align: center;
+    background-color: #FF6600;
+    color: black;
+    width: 25%;
+    height: 300%;
+    font-size: 5em;
+    border-radius: 20px;
+    position: absolute;
+    left: 51%;
+    top: 150%;
+}
+
+#English:hover,
+#Hindi:hover {
+    background-color: #ff7e5f;
+    color: white;
+}
+
+#English>span:hover,
+#Hindi>span:hover {
+    border-bottom: 1px solid rgb(223, 230, 183);
+    cursor: pointer;
+}

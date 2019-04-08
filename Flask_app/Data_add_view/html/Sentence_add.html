@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title> Add a new Sentence</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/vendor/bootstrap.min.css">
+    <script src="../js/vendor/jquery.min.js"></script>
+    <script src="../js/vendor/bootstrap.min.js"></script>
+</head>
+
+<body onload="$('#add_ques').trigger('reset')">
+    <div class="container">
+        <h1>Add a new Sentence:</h1>
+        <form class="form-horizontal" name="add_ques" action="" method="POST" id="add_ques">
+            <label><b>Words:</b></label>
+            <div class="form-group">
+                <div class="col-sm-5 words">
+                </div>
+            </div>
+            <label><b>Variations:</b></label>
+            <div class="form-group">
+                <div class="col-sm-5 variations">
+                </div>
+            </div>
+            <label for="Language"><b>Language:</b></label>
+            <div class="form-group">
+                <div class="col-sm-5">
+                    <select class="form-control" name="Language" id="Language" required>
+                        <option value="">Select Language</option>
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi</option>
+                    </select>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-default" value="Submit">
+        </form>
+    </div>
+</body>
+<script src="../js/Sentences_add.js"></script>
+
+</html>
